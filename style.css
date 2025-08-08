@@ -160,3 +160,18 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+.mensagem {
+    font-size: 0.95rem;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.mensagem.sucesso {
+    color: green;
+}
+
+.mensagem.erro {
+    color: red;
+}
+
