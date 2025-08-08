@@ -2,6 +2,23 @@ let listaDeAmigos = [];
 const input = document.getElementById('amigo');
 const mensagem = document.getElementById('mensagem');
 
+//Impede do usuário poder digitar números
+input.addEventListener('keydown', function (event) {
+    if (event.key >= '0' && event.key <= '9') {
+        event.preventDefault();
+        exibirMensagem('O campo deve conter apenas letras.', 'erro');
+    }
+});
+
+//Impede do usuário colar números
+input.addEventListener('input', function () {
+    const valorLimpo = this.value.replace(/[0-9]/g, '');
+    if (this.value !== valorLimpo) {
+        exibirMensagem('Não é permitido colar números.', 'erro');
+        this.value = valorLimpo;
+    }
+});
+
 function adicionarAmigo() {
     const nome = input.value.trim();
 
